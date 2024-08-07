@@ -1,4 +1,5 @@
 using ASPNETCOREFilters.Models;
+using ASPNETCOREFilters.Models.Filters;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -27,6 +28,12 @@ namespace ASPNETCOREFilters.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [TypeFilter(typeof(CustomExceptionFilter))]
+        public IActionResult Error2()
+        {
+            throw new NotImplementedException();
         }
     }
 }
