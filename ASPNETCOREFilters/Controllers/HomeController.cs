@@ -35,5 +35,11 @@ namespace ASPNETCOREFilters.Controllers
         {
             throw new NotImplementedException();
         }
+
+        [CustomResultFilter]
+        public IActionResult ResultTest()
+        {
+            return View();
+        }
     }
 }
