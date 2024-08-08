@@ -38,7 +38,8 @@ namespace ASPNETCOREFilters.Controllers
             throw new NotImplementedException();
         }
 
-        [CustomResultFilter]
+        //[CustomResultFilter]
+        [ServiceFilter(typeof(CustomExceptionFilter))]
         public IActionResult ResultTest()
         {
             return View();

@@ -14,6 +14,7 @@ namespace ASPNETCOREFilters
             {
                 option.Filters.Add(new ShowMessageFilter("Global"));
             });
+            builder.Services.AddScoped<CustomExceptionFilter>();
 
             var app = builder.Build();
 
