@@ -5,6 +5,7 @@ using System.Diagnostics;
 
 namespace ASPNETCOREFilters.Controllers
 {
+    [ShowMessageFilter("Contoller")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -14,6 +15,7 @@ namespace ASPNETCOREFilters.Controllers
             _logger = logger;
         }
 
+        [ShowMessageFilter("Action")]
         public IActionResult Index()
         {
             return View();

@@ -1,3 +1,5 @@
+using ASPNETCOREFilters.Models.Filters;
+
 namespace ASPNETCOREFilters
 {
     public class Program
@@ -7,7 +9,11 @@ namespace ASPNETCOREFilters
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews()
+                .AddMvcOptions(option =>
+            {
+                option.Filters.Add(new ShowMessageFilter("Global"));
+            });
 
             var app = builder.Build();
 
